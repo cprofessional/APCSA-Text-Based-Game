@@ -14,11 +14,11 @@ public class FeedHandler {
         scanner = s;
     }
 
-    private static final String LENGTH_ERROR(int len) {
+    private static String LENGTH_ERROR(int len) {
         return colorize("$REDERROR$RESET The target word is $GREEN" + len + "$RESET letters long");
     }
 
-    private static final String WELCOME_MESSAGE() {
+    private static String WELCOME_MESSAGE() {
         return colorize("Welcome to $GREENWordle!$RESET\n\nGuess a $GREEN5$RESET-letter word.\n" + //
                         "When you enter an answer, letters will turn:\n" + //
                         "$GREENGreen$RESET: Right letter, right spot.\n" + //
@@ -27,11 +27,11 @@ public class FeedHandler {
                         "Use the clues to guess the word in $GREEN6$RESET tries or less!");
     }
 
-    private static final String WIN_MESSAGE() { 
+    private static String WIN_MESSAGE() {
         return colorize("You have $GREENWON$RESET WORDLE!"); 
     }
 
-    private static final String LOSE_MESSAGE() { 
+    private static String LOSE_MESSAGE() {
         return colorize("You have $REDLOST$RESET WORDLE!\nTry again another time..."); 
     }
 
@@ -144,6 +144,6 @@ public class FeedHandler {
         appendAnnouncement(colorize("Play $GREENagain$RESET? ($GREENy$RESET/$REDn$RESET)"));
         String r = scanner.nextLine();
 
-        if(r.toLowerCase().equals("y")) new GameHandler();
+        if(r.equalsIgnoreCase("y")) new GameHandler();
     }
 }

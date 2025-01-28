@@ -2,7 +2,7 @@ package game;
 
 public class GameHandler {
 
-    private static String[] wordleWords = {
+    private static final String[] wordleWords = {
         "apple", "brave", "chair", "dream", "flock",
         "grass", "house", "light", "month", "quest",
         "storm", "angle", "beach", "crisp", "dance",
